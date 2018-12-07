@@ -19,6 +19,6 @@ echo "Adding static route for ${LOCALSUBNET} gw ${route_net_gateway}"
 ip route add ${LOCALSUBNET} via ${route_net_gateway} dev eth0
 
 echo "Starting transmission"
-su - abc -s /bin/bash -c "/usr/bin/transmission-daemon --config-dir /config"
+su abc -s /bin/bash -c "/usr/bin/transmission-daemon --config-dir /config --log-debug -e /config/transmission.log"
 
 
